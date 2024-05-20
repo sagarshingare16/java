@@ -12,7 +12,10 @@ public class Project02Application {
 		ConfigurableApplicationContext context = SpringApplication.run(Project02Application.class, args);
 
 		VaccineServiceImpl vaccineService = context.getBean(VaccineServiceImpl.class);
-		vaccineService.getVaccineByPrice(1000).forEach(System.out::println);
+
+		/*vaccineService.getVaccineByPrice(1500).forEach(System.out::println);
+		vaccineService.getVaccineBYManufacturer("Astrazaneka").forEach(System.out::println);*/
+		vaccineService.getVaccineByNameEquals("Phiser").forEach(System.out::println);
 	}
 
 }

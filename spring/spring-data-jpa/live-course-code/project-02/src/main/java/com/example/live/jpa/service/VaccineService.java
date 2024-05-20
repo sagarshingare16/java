@@ -7,6 +7,8 @@ import java.util.List;
 
 @Service
 public interface VaccineService {
-    List<Vaccine> getVaccineByPrice(Integer vaccinePrice);
+    List<Vaccine> getVaccineByPrice(Integer price);
+    List<Vaccine> getVaccineBYManufacturer(String manufacturer);
+    List<Vaccine> getVaccineByNameEquals(String name);
 
 }
