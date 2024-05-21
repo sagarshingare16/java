@@ -21,7 +21,7 @@ public class VaccineServiceImpl implements VaccineService{
         return vaccineRepository.searchByVaccineManufacturer(manufacturerName);
     }
 
-    @Override
+    /*@Override
     public List<Vaccine> fetchByVaccineManufacturer(String manufacturer1, String manufacturer2) {
         return vaccineRepository.searchByVaccineManufacturer(manufacturer1,manufacturer2);
     }
@@ -49,5 +49,5 @@ public class VaccineServiceImpl implements VaccineService{
     @Override
     public int insertVaccineDetails(Integer id, String name, String manufacturer, Integer price) {
         return vaccineRepository.insertVaccineDetails(id, name, manufacturer, price);
-    }
+    }*/
 }

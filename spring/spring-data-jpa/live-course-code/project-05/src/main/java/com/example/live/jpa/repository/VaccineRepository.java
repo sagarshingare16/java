@@ -17,7 +17,7 @@ public interface VaccineRepository extends JpaRepository<Vaccine,Integer> {
     @Query("from Vaccine where vaccineManufactureBy=:manufacturerName")
     List<Vaccine> searchByVaccineManufacturer(String manufacturerName);
 
-    @Query("from Vaccine where vaccineManufactureBy=:manufacturerName")
+    /*@Query("from Vaccine where vaccineManufactureBy=:manufacturerName")
     List<Vaccine> searchByVaccineManufacturerName(@Param("manufacturerName")String manufacturer);
 
     @Query("from Vaccine where vaccineManufactureBy in(:manufacturer1, :manufacturer2)")
@@ -43,7 +43,7 @@ public interface VaccineRepository extends JpaRepository<Vaccine,Integer> {
     @Modifying
     @Query(value="insert into vaccine_info(`vaccine_id`,`vaccine_name`,`vaccine_manufacture_by`,`vaccine_manufacture_by`) " +
             "Values(?,?,?,?)", nativeQuery=true)
-    int insertVaccineDetails(Integer id,String name, String manufacturer, Integer price);
+    int insertVaccineDetails(Integer id,String name, String manufacturer, Integer price);*/
 
 
 }

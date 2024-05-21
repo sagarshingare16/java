@@ -12,9 +12,9 @@ import java.util.List;
 public class Project05Application {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(Project05Application.class, args);
+		SpringApplication.run(Project05Application.class, args);
 
-		VaccineServiceImpl vaccineService = context.getBean(VaccineServiceImpl.class);
+		/*VaccineServiceImpl vaccineService = context.getBean(VaccineServiceImpl.class);
 
 		vaccineService.fetchByVaccineManufacturer("Astrazaneka").
 				forEach(System.out::println);
@@ -28,7 +28,7 @@ public class Project05Application {
 				System.out.println(vaccine + " ");
 			}
 			System.out.println();
-		}
+		}*/
 
 	}
 
