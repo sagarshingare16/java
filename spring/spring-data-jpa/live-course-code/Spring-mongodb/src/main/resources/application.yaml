@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: "Spring-Mongodb"
+
+  data:
+    mongodb:
+      uri: "mongodb://localhost:27017/"
+      database: "customerdb"
+
+
+
