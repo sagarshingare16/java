@@ -1,11 +1,12 @@
 package com.example.springMongodb.service;
 
-import com.example.springMongodb.dto.CustomerInfoDto;
 import com.example.springMongodb.model.CustomerInfo;
 import com.example.springMongodb.repository.CustomerInfoRepository;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
 
 @Service
 public class CustomerInfoServiceImpl implements CustomerInfoService{
@@ -28,4 +29,17 @@ public class CustomerInfoServiceImpl implements CustomerInfoService{
          }
          return null;
     }
+
+    @Override
+    public String deleteCustomerDetailsById(String customerId) {
+        Optional<CustomerInfo> isPresent = customerInfoRepository.findById(customerId);
+        if (isPresent.isPresent()){
+            customerInfoRepository.deleteById(customerId);
+            return "Customer with id " + customerId + "deleted successfully";
+        }
+        else {
+            return "Failed to delete";
+        }
+    }
+
 }
