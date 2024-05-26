@@ -18,7 +18,6 @@ public class CustomerInfoController {
     @PostMapping("/register")
     public ResponseEntity<String> registerCustomerInfo(@RequestBody CustomerInfo customerInfo){
         return new ResponseEntity<>(customerInfoService.registerCustomerDetails(customerInfo),HttpStatus.CREATED);
-
     }
 
     @GetMapping("/{customerId}")
