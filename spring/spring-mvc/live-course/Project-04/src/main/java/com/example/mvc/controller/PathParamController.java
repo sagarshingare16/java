@@ -9,7 +9,7 @@ import java.util.Map;
 @Controller
 public class PathParamController {
 
-    //localhost:8484/getMessage/Rajesh
+    //localhost:8484/getMessage/Sagar
     @GetMapping("/getMessage/{name}/{course}")
     public String getSomeMsg(@PathVariable("name")String n, @PathVariable("course")String c, Map<String, Object> model) {
         String msg="Hey, "+ n+ " You can join our live "+ c+ " course in future";
