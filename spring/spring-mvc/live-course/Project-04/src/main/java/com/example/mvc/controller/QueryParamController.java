@@ -9,8 +9,8 @@ import java.util.Map;
 @Controller
 public class QueryParamController {
 
-    //localhost:8181/get?name=Sagar
-    //localhost:8181/get?name=Sagar&course=SpringBoot
+    //localhost:8181/get?name=John
+    //localhost:8181/get?name=John&course=SpringBoot
     @GetMapping("/get")
     public String generateSomeMsg(@RequestParam("name")String n, String course, Map<String, Object> model) {
         String msg="Hey There! "+n+ " , I hope your are enjoying the journey of learning "+course;
