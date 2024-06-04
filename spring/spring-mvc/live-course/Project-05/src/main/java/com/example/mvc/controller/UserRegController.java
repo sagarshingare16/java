@@ -30,11 +30,11 @@ public class UserRegController {
     }*/
 
 
-    @PostMapping("/registerCustomer")
-    public void registerUser(@ModelAttribute("userRegistration") UserRegistration userRegistration,Map<String, Object> model){
+    @PostMapping
+    public String registerUser(@ModelAttribute("userRegistration") UserRegistration userRegistration,Map<String, Object> model){
         UserRegistration user =  userRegService.registerUser(userRegistration);
-        /*model.put("userReg",user);
-        return "response";*/
-        System.out.println(user);
+        model.put("userReg",user);
+        return "response";
+
     }
 }
