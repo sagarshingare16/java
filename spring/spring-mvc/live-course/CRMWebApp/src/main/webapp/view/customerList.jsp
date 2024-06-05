@@ -37,7 +37,6 @@
         	              <td>${customer.customerCity}</td>
 
 
-
         	           </tr>
 
         	           </c:forEach>
