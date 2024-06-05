@@ -18,7 +18,7 @@ public class CustomerController {
     @GetMapping("/customerList")
     public String getCustomerInfo(Model model){
         List<CustomerInfo> customerInfoList = customerService.getCustomersInfo();
-        model.addAttribute("customerList",customerInfoList);
+        model.addAttribute("customers",customerInfoList);
         return "customerList";
 
     }
