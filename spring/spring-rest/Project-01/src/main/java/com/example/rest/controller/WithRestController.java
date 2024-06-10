@@ -1,5 +1,8 @@
 package com.example.rest.controller;
 
+import com.example.rest.model.Alien;
+import com.example.rest.service.WebService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -7,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/v1")
 public class WithRestController {
+
+    @Autowired
+    WebService service;
 
     @GetMapping("/welcome1")
     public ResponseEntity<String> getWelcomeMsg(){
@@ -25,7 +31,9 @@ public class WithRestController {
         return new ResponseEntity<>("Hello and Welcome Ar: "+name+ " ",HttpStatus.OK);
     }
 
-
-
+    @GetMapping("/alineInfo")
+    public ResponseEntity<Alien> getAlienInfo(){
+        return new ResponseEntity<>(service.getAlien(),HttpStatus.OK);
+    }
 
 }

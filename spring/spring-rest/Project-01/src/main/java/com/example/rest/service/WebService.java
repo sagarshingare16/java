@@ -1,10 +1,12 @@
 package com.example.rest.service;
 
+import com.example.rest.model.Alien;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
 public class WebService {
+
     public String generateGreeting(){
         LocalDateTime dateTime = LocalDateTime.now();
         int hour = dateTime.getHour();
@@ -22,5 +24,9 @@ public class WebService {
             wish="Good night";
         }
         return wish;
+    }
+
+    public Alien getAlien(){
+        return new Alien(101,"Navin","Moon");
     }
 }
