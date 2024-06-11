@@ -1,5 +1,6 @@
 package com.example.rest.controller;
 
+import com.example.rest.Exception.TouristNotFoundException;
 import com.example.rest.model.Tourist;
 import com.example.rest.service.TouristManagementImpl;
 import jdk.jfr.Experimental;
@@ -40,8 +41,8 @@ public class TouristController {
     public ResponseEntity<?> getTouristById(@PathVariable Integer touristId){
         try{
             return new ResponseEntity<>(touristManagement.getTouristById(touristId),HttpStatus.OK);
-        }catch (Exception e){
-            return new ResponseEntity<>("Tourist not found",HttpStatus.BAD_REQUEST);
+        }catch (TouristNotFoundException e){
+            return new ResponseEntity<>(e.getMessage(),HttpStatus.BAD_REQUEST);
         }
     }
 

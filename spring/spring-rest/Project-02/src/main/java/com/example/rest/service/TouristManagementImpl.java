@@ -1,5 +1,6 @@
 package com.example.rest.service;
 
+import com.example.rest.Exception.TouristNotFoundException;
 import com.example.rest.model.Tourist;
 import com.example.rest.repository.TouristRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,6 @@ public class TouristManagementImpl implements TouristManagement{
 
     @Override
     public Tourist getTouristById(Integer touristId) {
-        return repository.findById(touristId).orElseThrow();
+        return repository.findById(touristId).orElseThrow(()-> new TouristNotFoundException("Tourist with given id: "+touristId+ "not found"));
     }
 }
