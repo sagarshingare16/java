@@ -11,6 +11,6 @@ public interface TouristService {
     List<Tourist> getAllTourist();
     Tourist getTouristById(Integer touristId);
     String updateTouristInfo(Tourist tourist);
-    String updateTouristInfoById(Integer id,double touristBudget);
-    String deleteTouristById(Integer id);
+    String updateTouristInfoById(Integer touristId,double touristBudget);
+    String deleteTouristById(Integer touristId);
 }
