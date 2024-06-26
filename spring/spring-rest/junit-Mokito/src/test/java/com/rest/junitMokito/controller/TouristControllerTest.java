@@ -31,24 +31,29 @@ class TouristControllerTest {
 
     @Test
     void registerTouristDetails() throws Exception {
+
         Mockito.when(touristService.registerTourist(ArgumentMatchers.any())).thenReturn("Tourist registered..");
 
         Tourist tourist =new Tourist(11, "Rohan", "Bengaluru", "Diamond",45454.4);
         ObjectMapper mapper = new ObjectMapper();
         String jsonData = mapper.writeValueAsString(mapper);
 
-        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.
-                post("/api/v1/tourist/register").
-                contentType(MediaType.APPLICATION_JSON)
+        MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders
+                .post("/api/v1/tourist/register")
+                .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonData);
 
-        ResultActions performed  = mockMvc.perform(requestBuilder);
+        /*ResultActions performed  = mockMvc.perform(requestBuilder);
         MvcResult mvcResult  = performed.andReturn();
         MockHttpServletResponse response  = mvcResult.getResponse();
 
-        int responseStatus = response.getStatus();
+        int responseStatus = response.getStatus();*/
+
+        int responseStatus = mockMvc.perform(requestBuilder)
+                            .andReturn()
+                            .getResponse()
+                            .getStatus();
 
         assertEquals(201,responseStatus);
-
     }
 }

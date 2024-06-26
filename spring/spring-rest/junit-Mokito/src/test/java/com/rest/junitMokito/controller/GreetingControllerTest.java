@@ -31,11 +31,17 @@ class GreetingControllerTest {
 
         // Request object
         MockHttpServletRequestBuilder requestBuilder = MockMvcRequestBuilders.get("/api/v1/greeting/greet");
-        ResultActions performed  = mockMvc.perform(requestBuilder);
+
+        /*ResultActions performed  = mockMvc.perform(requestBuilder);
         MvcResult mvcResult  = performed.andReturn();
         MockHttpServletResponse response  = mvcResult.getResponse();
 
-        int responseStatus = response.getStatus();
+        int responseStatus = response.getStatus();*/
+
+        int responseStatus = mockMvc.perform(requestBuilder)
+                                    .andReturn()
+                                    .getResponse()
+                                    .getStatus();
 
         assertEquals(200,responseStatus);
 

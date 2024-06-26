@@ -11,6 +11,8 @@ public class TouristServiceImpl implements TouristService{
         tourist.setBudget(tourist.getBudget());
         tourist.setPackageType(tourist.getPackageType());
 
+        System.out.println(tourist);
+
         return "Tourist register successfully..";
     }
 }
