@@ -1,10 +1,7 @@
-package com.example.testing;
+package com.example.testing.java;
 
 class Main {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
 
-        int actualResult = calculator.divide(10,5);
-        
     }
 }

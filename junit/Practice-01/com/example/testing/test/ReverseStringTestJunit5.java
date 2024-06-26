@@ -1,10 +1,16 @@
-package com.example.testing.java;
+package com.example.testing.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import com.example.testing.java.ReverseString;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReverseStringTestJunit5 {
 
-    @org.junit.jupiter.api.Test
-    void reverseString() {
+    @Test
+    void test(){
+        ReverseString reverseString = new ReverseString();
+        assertEquals("neilA",reverseString.reverseString("Alien"));
     }
+
 }
