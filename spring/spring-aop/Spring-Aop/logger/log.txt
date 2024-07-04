@@ -1,0 +1,30 @@
+2024-07-05 00:15:50,254 : com.example.apo.SpringAopApplication --> [logStarting]  :: Starting SpringAopApplication using Java 21.0.1 with PID 20660 (D:\github-code\java-code-github\spring\spring-aop\Spring-Aop\target\classes started by sagar in D:\github-code\java-code-github\spring\spring-aop\Spring-Aop)  
+2024-07-05 00:15:50,257 : com.example.apo.SpringAopApplication --> [logStartupProfileInfo]  :: No active profile set, falling back to 1 default profile: "default"  
+2024-07-05 00:15:51,273 : org.springframework.data.repository.config.RepositoryConfigurationDelegate --> [registerRepositoriesIn]  :: Bootstrapping Spring Data JPA repositories in DEFAULT mode.  
+2024-07-05 00:15:51,356 : org.springframework.data.repository.config.RepositoryConfigurationDelegate --> [registerRepositoriesIn]  :: Finished Spring Data repository scanning in 61 ms. Found 1 JPA repository interface.  
+2024-07-05 00:15:52,466 : org.springframework.boot.web.embedded.tomcat.TomcatWebServer --> [initialize]  :: Tomcat initialized with port 8181 (http)  
+2024-07-05 00:15:52,499 : org.apache.catalina.core.StandardService --> [log]  :: Starting service [Tomcat]  
+2024-07-05 00:15:52,500 : org.apache.catalina.core.StandardEngine --> [log]  :: Starting Servlet engine: [Apache Tomcat/10.1.25]  
+2024-07-05 00:15:52,636 : org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] --> [log]  :: Initializing Spring embedded WebApplicationContext  
+2024-07-05 00:15:52,637 : org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext --> [prepareWebApplicationContext]  :: Root WebApplicationContext: initialization completed in 2270 ms  
+2024-07-05 00:15:53,225 : org.hibernate.jpa.internal.util.LogHelper --> [logPersistenceUnitInformation]  :: HHH000204: Processing PersistenceUnitInfo [name: default]  
+2024-07-05 00:15:53,441 : org.hibernate.Version --> [logVersion]  :: HHH000412: Hibernate ORM core version 6.5.2.Final  
+2024-07-05 00:15:53,503 : org.hibernate.cache.internal.RegionFactoryInitiator --> [initiateService]  :: HHH000026: Second-level cache disabled  
+2024-07-05 00:15:53,952 : org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo --> [addTransformer]  :: No LoadTimeWeaver setup: ignoring JPA class transformer  
+2024-07-05 00:15:53,978 : com.zaxxer.hikari.HikariDataSource --> [getConnection]  :: HikariPool-1 - Starting...  
+2024-07-05 00:15:54,215 : com.zaxxer.hikari.pool.HikariPool --> [checkFailFast]  :: HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@17884d  
+2024-07-05 00:15:54,217 : com.zaxxer.hikari.HikariDataSource --> [getConnection]  :: HikariPool-1 - Start completed.  
+2024-07-05 00:15:55,233 : org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator --> [initiateService]  :: HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)  
+2024-07-05 00:15:55,276 : org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean --> [buildNativeEntityManagerFactory]  :: Initialized JPA EntityManagerFactory for persistence unit 'default'  
+2024-07-05 00:15:56,390 : org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration --> [openEntityManagerInViewInterceptor]  :: spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning  
+2024-07-05 00:15:57,681 : org.springframework.boot.web.embedded.tomcat.TomcatWebServer --> [start]  :: Tomcat started on port 8181 (http) with context path '/'  
+2024-07-05 00:15:57,700 : com.example.apo.SpringAopApplication --> [logStarted]  :: Started SpringAopApplication in 7.994 seconds (process running for 8.449)  
+2024-07-05 00:16:06,200 : org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] --> [log]  :: Initializing Spring DispatcherServlet 'dispatcherServlet'  
+2024-07-05 00:16:06,200 : org.springframework.web.servlet.DispatcherServlet --> [initServletBean]  :: Initializing Servlet 'dispatcherServlet'  
+2024-07-05 00:16:06,201 : org.springframework.web.servlet.DispatcherServlet --> [initServletBean]  :: Completed initialization in 1 ms  
+2024-07-05 00:16:06,281 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: getAlienInfo()arguments :: []  
+2024-07-05 00:16:06,284 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: getAllAlienInfo()arguments :: []  
+2024-07-05 00:16:06,286 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: findAll()arguments :: []  
+2024-07-05 00:16:36,995 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: registerAlien()arguments :: [{"id":null,"name":"Roman","planet":"Pluto"}]  
+2024-07-05 00:16:36,997 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: registerAlienInfo()arguments :: [{"id":null,"name":"Roman","planet":"Pluto"}]  
+2024-07-05 00:16:37,004 : com.example.apo.advice.LoggingAdvice --> [applicationLogger]  :: method invoked :: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint :: save()arguments :: [{"id":null,"name":"Roman","planet":"Pluto"}]  
