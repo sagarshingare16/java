@@ -14,11 +14,10 @@ import java.util.List;
 @RequestMapping("/api/v1/student-controller")
 public class StudentController {
 
-
     public List<Student> studentList = new ArrayList<>(
             List.of(new Student(101,"Rohan","Java Spring Boot and Microservices."),
-                    new Student(102,"Navin","Dev-Ops"),
-                    new Student(103,"Sam","Python with FastApi"))
+                    new Student(102,"Navin","Dev-Ops."),
+                    new Student(103,"Surya","Python with FastApi."))
     );
 
     @GetMapping("/get-students")
