@@ -4,6 +4,7 @@ import com.security.model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,6 +45,18 @@ public class StudentController {
     public ResponseEntity<String> allStudent(@RequestBody Student student){
         studentList.add(student);
         return new ResponseEntity<>("Student registered successfully.",HttpStatus.CREATED);
+    }
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/user")
+    public String userEndPoint(){
+        return "Hello User!";
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin")
+    public String adminEndPoint(){
+        return "Hello admin!";
     }
 
 }
