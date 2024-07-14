@@ -24,7 +24,7 @@ public class UserLoginController {
     @Autowired
     UserInfoService userInfoService;
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<String> userLogin(@RequestBody User user){
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(user.getUserName(),user.getUserPassword()));
