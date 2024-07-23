@@ -1,5 +1,6 @@
 package com.springJwt.service;
 
+import com.springJwt.jwtConfig.JwtUtils;
 import com.springJwt.model.EntityDetails;
 import com.springJwt.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class EntityService {
@@ -22,6 +25,9 @@ public class EntityService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    JwtUtils jwtUtils;
+
     public EntityDetails registerEntity(EntityDetails entityDetails) {
         entityDetails.setPassword(passwordEncoder.encode(entityDetails.getPassword()));
         userDetailsRepository.save(entityDetails);
@@ -32,8 +38,27 @@ public class EntityService {
         Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 entityDetails.getName(), entityDetails.getPassword()));
         if(authenticate.isAuthenticated())
-            return "Login Successful";
+            return jwtUtils.generateToken(entityDetails.getName());
         else
-            return "Login Failed";
+            throw new RuntimeException("Invalid credentials");
+    }
+
+    public EntityDetails getEntityDetails(Long id) {
+        Optional<EntityDetails> entityDetailsOpt = userDetailsRepository.findById(id);
+        if(entityDetailsOpt.isPresent())
+            return entityDetailsOpt.get();
+        else
+            throw new RuntimeException("Entity not found");
+    }
+
+    public EntityDetails updateEntity(EntityDetails entityDetails) {
+        Optional<EntityDetails> entityDetailsOpt = userDetailsRepository.findById(entityDetails.getId());
+        if(entityDetailsOpt.isPresent()) {
+            entityDetails.setEmail(entityDetails.getEmail());
+            userDetailsRepository.save(entityDetails);
+            return entityDetails;
+        }else {
+            return userDetailsRepository.save(entityDetails);
+        }
     }
 }
