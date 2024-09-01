@@ -3,6 +3,7 @@ package stream;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class EmpMain {
     public static void main(String[] args) {
@@ -27,6 +28,11 @@ public class EmpMain {
         Employee maxSalaryEmp = employeeList.stream()
                 .max(Comparator.comparing(Employee::getEmpSalary)).get();
         System.out.println(maxSalaryEmp.getEmpName());
+
+        employeeList.stream()
+                .map(employee -> employee.getEmpSalary()+200.0)
+                .forEach(System.out::println);
+
 
     }
 }
